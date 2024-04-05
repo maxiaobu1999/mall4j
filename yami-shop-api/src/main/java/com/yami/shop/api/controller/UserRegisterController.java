@@ -42,6 +42,11 @@ public class UserRegisterController {
 
     private final PasswordManager passwordManager;
 
+    /**
+     *  http://localhost:8086/user/register
+     * @param userRegisterParam
+     * @return
+     */
     @PostMapping("/register")
     @Operation(summary = "注册" , description = "用户注册或绑定手机号接口")
     public ServerResponseEntity<TokenInfoVO> register(@Valid @RequestBody UserRegisterParam userRegisterParam) {
@@ -60,7 +65,8 @@ public class UserRegisterController {
         user.setStatus(1);
         user.setNickName(userRegisterParam.getNickName());
         user.setUserMail(userRegisterParam.getUserMail());
-        String decryptPassword = passwordManager.decryptPassword(userRegisterParam.getPassWord());
+//        String decryptPassword = passwordManager.decryptPassword(userRegisterParam.getPassWord());
+        String decryptPassword = userRegisterParam.getPassWord();
         user.setLoginPassword(passwordEncoder.encode(decryptPassword));
         String userId = IdUtil.simpleUUID();
         user.setUserId(userId);

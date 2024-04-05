@@ -21,8 +21,8 @@ import org.springframework.util.StringUtils;
  * 接口权限判断工具
  * @author lh
  */
-@Slf4j
-@Component("pms")
+@Slf4j// log 日志
+@Component("pms")// @Component：标注一个普通的POJO实例化到Spring容器中
 public class PermissionService {
     /**
      * 判断接口是否有xxx:xxx权限

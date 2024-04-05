@@ -12,7 +12,19 @@
 	<artifactId>yami-shop-security</artifactId>
 
 	<description>商城安全模块</description>
-	<packaging>pom</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <packaging>pom</packaging>
 
 	<modules>
 		<module>yami-shop-security-api</module>

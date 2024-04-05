@@ -35,6 +35,7 @@ public class UserController {
 	
 	/**
 	 * 查看用户接口
+	 * http://localhost:8086/p/user/userInfo?123
 	 */
 	@GetMapping("/userInfo")
 	@Operation(summary = "查看用户信息" , description = "根据用户ID（userId）获取用户信息")
